@@ -9,10 +9,10 @@ module.exports.addItems = async (req, res)=>{
     res.send(response)
 }
 module.exports.updateItems = async (req, res) => {
-    const response = await item.updateItem(req.query, req.body);
+    const response = await item.updateItem(req.params,req.body);
     res.send(response)
 }
 module.exports.deleteItems = async (req,res) =>{
-    const response = await item.deleteItem(req.params);
+    const response = await item.deleteItem(req.params.id);
     res.send(response);
 }

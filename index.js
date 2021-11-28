@@ -5,9 +5,11 @@ const mongoose = require("mongoose")
 const routes = require("./components/route");
 const port = 8000;
 
+app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
 
 app.use(routes)
+
 //connection establishing with mongoose
 
 mongoose.connect("mongodb://localhost:27017/householdItems",{
